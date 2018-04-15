@@ -1,0 +1,29 @@
+successmsg{
+	font-family:sans-serif;
+	text-align: center;
+	  padding: 10px;
+	  display: block;
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+	  width: 70%;
+	  margin: 200px 15%;
+	  border-radius: 4px;
+}
+
+title{
+	letter-spacing: 1.5px;
+	display: block;
+	color:#7CB342;
+	font-size: 2.0em;
+}
+
+subtitle{
+	font-size: 1.4em;
+	color:#009688;
+	display:block;
+}
+
+login{
+	font-size: 1.4em;
+	color:#009688;
+	display:block;
+}

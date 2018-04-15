@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" >
+
+
+function validate()
+
+{
+    
+	var aadhar = document.getElementById('aadhar');
+	
+
+
+
+
+
+
+
+
+ 
+   
+   
+  
+  
+   if( aadhar.value == "" ||
+           isNaN( aadhar.value) ||
+           aadhar.value.length != 16 )
+   {
+     alert( "Please provide a  in the format ######." );
+     aadhar.focus() ;
+     return false;
+   }
+ 
+   return( true );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+	<meta charset="UTF-8">
+	<title>Online Voting System</title>
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+<body>
+<div class="container">
+  <form action="/voting" method="post" onsubmit='return validate()'>
+
+    <label for="aadhar">Aaadhar No</label>
+    <input type="text" id="aadhar" name="aadhar" placeholder="Your Aadhar No">
+
+    <label for="Constituency">Constituency</label>
+      <select id="ccy" name="ccy" placeholder="Voter Constiturncy">
+      <option value="varanasi">Varanasi</option>
+      <option value="amethi">Amethi</option>
+      <option value="gorakhpur">Gorakhpur</option>
+    </select>
+
+    <label for="party">Party Name</label>
+    <select id="party" name="party" placeholder="Party Name">
+      <option value="BJP">BJP</option>
+      <option value="Congress">Congress</option>
+      <option value="Others">Others</option>
+    </select>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>	
+</body>
+</html>.

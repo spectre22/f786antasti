@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" >
+
+
+function validate()
+
+{
+     var textname = document.getElementById('textname');
+	var addr = document.getElementById('addr');
+	
+	var state = document.getElementById('state');
+	
+	var email = document.getElementById('email');
+	var pin = document.getElementById('pin');
+	var aadhar = document.getElementById('aadhar');
+	var dob = document.getElementById('dob');
+var mobile = document.getElementById('mobile');
+
+
+
+
+
+
+
+
+ 
+   if( textname.value == "" )
+   {
+     alert( "Please provide your Name!" );
+     textname.focus() ;
+     return false;
+   }
+   
+   
+  
+   if( addr.value == "" )
+   {
+     alert( "Please provide your Personal Address!" );
+     addr.focus() ;
+     return false;
+   }
+   
+      
+   if( state.value == "-1" )
+   {
+     alert( "Please provide your Select State!" );
+     
+     return false;
+   }
+   if( pin.value == "" ||
+           isNaN( pin.value) ||
+           pin.value.length != 6 )
+   {
+     alert( "Please provide a pincode in the format ######." );
+     pin.focus() ;
+     return false;
+   }
+   if( aadhar.value == "" ||
+           isNaN( aadhar.value) ||
+           aadhar.value.length != 16 )
+   {
+     alert( "Please provide a aadhar in the format ######." );
+     aadhar.focus() ;
+     return false;
+   }
+ var email = email.value;
+  atpos = email.indexOf("@");
+  dotpos = email.lastIndexOf(".");
+ if (email == "" || atpos < 1 || ( dotpos - atpos < 2 )) 
+ {
+     alert("Please enter correct email ID")
+     email.focus() ;
+     return false;
+ }
+  if( dob.value == "" )
+   {
+     alert( "Please provide your DOB!" );
+     dob.focus() ;
+     return false;
+   }
+  if( mobile.value == "" ||
+           isNaN( mobile.value) ||
+           mobile.value.length != 10 )
+   {
+     alert( "Please provide a Mobile No in the format 123." );
+     mobile.focus() ;
+     return false;
+   }
+   return( true );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+	<meta charset="UTF-8">
+	<title>Online Voting System</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="header">
+		<div class="section">
+			<div class="logo">
+				<a href="/">E-Voting Portal</a>
+			</div>
+			<ul>
+				<li>
+					<a href="/">home</a>
+				</li>
+				<li>
+					<a href="/about">about</a>
+				</li>
+				<li class="selected">
+					<a href="/register">register</a>
+				</li>
+				<li>
+					<a href="/news">stats</a>
+				</li>
+				<li>
+					<a href="/contact">contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="body">
+<div>
+      <div class="featured">
+      <h2>REGISTRATION</h2>
+	 <form action="/register" method="post" name="Registration"  onsubmit='return validate()' >
+
+<table cellpadding="10" width="20%" align="center"
+
+  cellspacing="6">
+
+
+<tr>
+
+  <td colspan=2>
+
+  <center><font size=6><b>Register to VOTE today</b></font></center>
+
+  </td>
+
+  </tr>
+
+
+<tr>
+
+  <td>Name:</td>
+
+  <td><input type="text" name="name" id="textname" placeholder="Name" size="30"></td>
+
+  </tr>
+
+
+<tr>
+
+  <td>Aadhar Number:</td>
+
+  <td><input type="text" name="aadhar" id="aadhar" placeholder="Aadhar(16-Digit)"
+
+  size="30"></td>
+
+  </tr>
+
+  <tr>
+
+  <td> Address:</td>
+
+  <td><input type="text" name="adda" id="addr" placeholder="Address"size="30"></td>
+
+  </tr>
+
+<tr>
+
+  <td>Email-Id:</td>
+
+  <td><input type="text" name="email" id="email" placeholder="E-mail" size="30"></td>
+
+  </tr>
+  <tr>
+
+  <td>Password:</td>
+
+  <td><input type="password" name="password" id="password" placeholder="Password"
+
+  size="30"></td>
+
+  </tr>
+
+  <tr>
+
+
+<tr>
+
+  <td>DOB:</td>
+
+  <td><input type="text" name="dob" id="dob" placeholder="Date of Birth"size="30"></td>
+
+  </tr>
+
+
+<tr>
+
+  <td>Mobile-No:</td>
+
+  <td><input type="text" name="mobile" id="mobile" placeholder="Mobile-No" size="30"></td>
+
+  </tr>
+
+  
+
+
+
+<tr>
+
+  <td>Sex</td>
+
+  <td><input type="radio" name="sex" value="male" size="10">Male
+
+  <input type="radio" name="sex" value="Female" size="10">Female</td>
+
+  </tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+  <td>State</td>
+
+  <td><select name="state" id="state">
+
+  <option value="-1" selected>select..</option>
+
+  <option value="New Delhi">NEW DELHI</option>
+
+  <option value="Mumbai">Maharashtra</option>
+
+  <option value="Goa">GOA</option>
+
+  <option value="Haryana">Haryana</option>
+   <option value="Himachal">Himachal</option>
+    <option value="Punjab">Punjab</option>
+	 <option value="Gujarat">Gujarat</option>
+
+  </select></td>
+
+  </tr>
+
+  <tr>
+
+  <td>PinCode:</td>
+
+  <td><input type="text" name="pin" id="pin" size="30"></td>
+
+
+</tr>
+<tr>
+
+  <td><input type="reset"></td>
+
+  <td colspan="2"><input type="submit" value="Submit Form" /></td>
+
+  </tr>
+  
+  </table>
+
+  </form> 
+  </div>
+  </div>
+  
+	
+	</div>
+	<div id="footer">
+		<div>
+			<div class="connect">
+				<a href="" id="twitter">twitter</a>
+				<a href="" id="facebook">facebook</a>
+				<a href="" id="googleplus">googleplus</a>
+				<a href="" id="pinterest">pinterest</a>
+			</div>
+			<p>
+				&copy; DeveloperSam copyright 2050 | all rights reserved.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
